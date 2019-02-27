@@ -46,5 +46,69 @@ namespace DAO
                 conn.Dispose();
             }
         }
+        public static String[] getOne(String id, String table)
+        {
+            String[] result = { };
+            SqlConnection conn = GetConnect.GetDBConnection();
+            conn.Open();
+            String sql = "SELECT * FROM " + table + "WHERE id =\'" + id +"\'";
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sql;
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    result = new String[reader.FieldCount];
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        result[i] = reader[i].ToString();
+                    }
+                }
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return result;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+        public static String[] getLoaiTB()
+        {
+            String[] result = {};
+            SqlConnection conn = GetConnect.GetDBConnection();
+            conn.Open();
+            String sql = "SELECT loai FROM ThietBi GROUP BY loai";
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sql;
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<String> tmp = new List<string>();
+                while (reader.Read())
+                    tmp.Add(reader[0].ToString());
+                result = new string[tmp.Count];
+                for (int i = 0; i < tmp.Count; i++)
+                    result[i] = tmp[i];
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return result;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
     }
 }

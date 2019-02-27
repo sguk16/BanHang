@@ -76,6 +76,7 @@ namespace GUI
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

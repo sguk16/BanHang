@@ -13,5 +13,9 @@ namespace BUS
         {
             return ThietBiDAO.GetAllThietBi();
         }
+        public static String[] Loaitb()
+        {
+            return ThietBiDAO.LoaiTB();
+        }
     }
 }

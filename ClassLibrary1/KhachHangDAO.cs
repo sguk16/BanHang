@@ -17,5 +17,9 @@ namespace DAO
                 result.Add(new KhachHang(data[i]));
             return result;
         }
+        public static KhachHang GetKhachHang(String id)
+        {
+            return new KhachHang(ExecuteQuery.getOne(id, "KhachHang"));
+        }
     }
 }
