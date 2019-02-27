@@ -44,6 +44,9 @@
     <Compile Include="ExecuteQuery.cs" />
     <Compile Include="GetConnect.cs" />
     <Compile Include="DBConnect.cs" />
+    <Compile Include="KhachHangDAO.cs" />
+    <Compile Include="HoaDonDAO.cs" />
+    <Compile Include="CTHDDAO.cs" />
     <Compile Include="ThietBiDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

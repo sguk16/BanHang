@@ -7,11 +7,11 @@ using DTO;
 using DAO;
 namespace BUS
 {
-    public class ThietBiBUS
+    public class KhachHangBUS
     {
-        public static List<ThietBi> ListTB()
+        public static List<KhachHang> ListKH()
         {
-            return ThietBiDAO.GetAllThietBi();
+            return KhachHangDAO.GetAllKhachHang();
         }
     }
 }

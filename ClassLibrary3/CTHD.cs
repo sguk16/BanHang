@@ -8,16 +8,22 @@ namespace DTO
 {
     public class ChiTietHoaDon
     {
-        private int thanhtien;
-        private String makh,mahd;
-        private float giamgia;
-        private HashSet<ThietBi> sanpham;
-
-        public int Thanhtien { get => thanhtien; set => thanhtien = value; }
-        public string Makh { get => makh; set => makh = value; }
-        public float Giamgia { get => giamgia; set => giamgia = value; }
-        public HashSet<ThietBi> Sanpham { get => sanpham; set => sanpham = value; }
+        private String mahd, matb;
+        private int soluong;
         public string Mahd { get => mahd; set => mahd = value; }
-        
+        public string Matb { get => matb; set => matb = value; }
+        public int Soluong { get => soluong; set => soluong = value; }
+        public ChiTietHoaDon(String mahd, String matb, int soluong)
+        {
+            this.mahd = mahd;
+            this.matb = matb;
+            this.soluong = soluong;
+        }
+        public ChiTietHoaDon(String[] data)
+        {
+            this.mahd = data[0];
+            this.matb = data[1];
+            this.soluong = int.Parse(data[2]);
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace GUI
             // cblist
             // 
             this.cblist.FormattingEnabled = true;
-            List<ThietBi> TB = ThietBiBUS.LoaiTB();
+            List<ThietBi> TB = ThietBiBUS.ListTB();
             cblist.DataSource = TB;
             this.cblist.Location = new System.Drawing.Point(0, 36);
             this.cblist.Name = "cblist";

@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="ThietBiBUS - Copy %283%29.cs" />
+    <Compile Include="KhachHangBUS.cs" />
     <Compile Include="ThietBiBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
