@@ -13,5 +13,13 @@ namespace BUS
         {
             return KhachHangDAO.GetAllKhachHang();
         }
+        public static int AddKhachHang(KhachHang kh)
+        {
+            return KhachHangDAO.AddKhachHang(kh);
+        }
+        public static int EditKhachHang(KhachHang kh)
+        {
+            return KhachHangDAO.EditKhachHang(kh);
+        }
     }
 }

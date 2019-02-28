@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using DTO;
+using System.Data;
+
 namespace DAO
 {
     public class ThietBiDAO
@@ -34,6 +36,45 @@ namespace DAO
         public static String[] LoaiTB()
         {
             return ExecuteQuery.getLoaiTB();
+        }
+        //Thêm thiết bị
+        public static int AddThietBi(ThietBi tb)
+        {
+            return ExecuteQuery.AddRows(tb.ToString(), "ThietBi");
+        }
+        //Sửa thiết bị
+        public static int EditThietBi(ThietBi tb)
+        {
+            int result = 0;
+            SqlConnection conn = GetConnect.GetDBConnection();
+            conn.Open();
+            String sql = "UPDATE ThietBi \n" +
+                "SET ten='" +tb.Tentb+"',gia="+tb.Dongia+",soluong="+tb.SL+",loai='"+tb.Loaitb+"'\n"+
+                "WHERE id='" + tb.Matb+"'";
+            Console.WriteLine(sql);
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sql;
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return result;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+        //Xóa thiết bị
+        public static int DeleteThietBi(ThietBi tb)
+        {
+            return ExecuteQuery.DeleteRows(tb.Matb, "ThietBi");
         }
     }
 }

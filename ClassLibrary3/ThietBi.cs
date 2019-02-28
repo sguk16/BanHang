@@ -13,7 +13,7 @@ namespace DTO
         private int sl, dongia;
         public override string ToString()
         {
-            return loaitb;
+            return "\'"+matb+ "\',\'"+ tentb + "\'," + dongia + "," + sl + ",'"+ loaitb + "\'";
         }
         public ThietBi(string matb, string tentb, string loaitb, int sl, int dongia)
         {
@@ -32,7 +32,7 @@ namespace DTO
             this.dongia = int.Parse(data[4]);
         }
 
-        public int SL { get => SL; set => SL = value; }
+        public int SL { get => sl; set => sl = value; }
         public int Dongia { get => dongia; set => dongia = value; }
         public string Matb { get => matb; set => matb = value; }
         public string Tentb { get => tentb; set => tentb = value; }

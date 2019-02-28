@@ -9,7 +9,10 @@ namespace DTO
     public class KhachHang
     {
         private String makh, tenkh, diachi, sdt, ngaysinh;
-
+        public override string ToString()
+        {
+            return "\'" + makh + "\',\'" + tenkh + "\','" + diachi + "\','" + sdt + "\'";
+        }
         public string Makh { get => makh; set => makh = value; }
         public string Tenkh { get => tenkh; set => tenkh = value; }
         public string Diachi { get => diachi; set => diachi = value; }

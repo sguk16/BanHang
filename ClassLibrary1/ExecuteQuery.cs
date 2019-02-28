@@ -110,5 +110,56 @@ namespace DAO
                 conn.Dispose();
             }
         }
+        public static int AddRows(String obj,String table)
+        {
+            int result = 0;
+            SqlConnection conn = GetConnect.GetDBConnection();
+            conn.Open();
+            String sql = "INSERT INTO " + table + " VALUES(" + obj + ")";
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sql;
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return result;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+
+        }
+        public static int DeleteRows(String id,String table)
+        {
+            int result = 0;
+            SqlConnection conn = GetConnect.GetDBConnection();
+            conn.Open();
+            String sql = "DELETE FROM " + table + " WHERE id='" + id +"'";
+            try
+            {
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sql;
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+                Console.WriteLine(e.StackTrace);
+                return result;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
     }
 }

@@ -10,6 +10,10 @@ namespace DTO
     {
         private String mahd, matb;
         private int soluong;
+        public override string ToString()
+        {
+            return "\'" + mahd + "\',\'" + matb + "\','" + soluong + "\'";
+        }
         public string Mahd { get => mahd; set => mahd = value; }
         public string Matb { get => matb; set => matb = value; }
         public int Soluong { get => soluong; set => soluong = value; }

@@ -26,5 +26,19 @@ namespace DAO
                 result.Add(new ChiTietHoaDon(data[i]));
             return result;
         }
+        public static int AddCTHD(ChiTietHoaDon cthd)
+        {
+            return ExecuteQuery.AddRows(cthd.ToString(), "CTHoaDon");
+        }
+        public static int EditCTHD(ChiTietHoaDon cthd)
+        {
+            int result = 0;
+            //sẽ thực hiện sau khi bàn bạc
+            return result;
+        }
+        public static int DeleteThietBi(ChiTietHoaDon cthd)
+        {
+            return ExecuteQuery.DeleteRows(cthd.Mahd, "CTHoaDon");
+        }
     }
 }

@@ -17,5 +17,13 @@ namespace BUS
         {
             return ThietBiDAO.LoaiTB();
         }
+        public static int AddThietBi(ThietBi tb)
+        {
+            return ThietBiDAO.AddThietBi(tb);
+        }
+        public static int EditThietBi(ThietBi tb)
+        {
+            return ThietBiDAO.EditThietBi(tb);
+        }
     }
 }
