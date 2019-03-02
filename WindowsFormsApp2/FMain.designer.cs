@@ -38,6 +38,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.dgvCTHD = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMaHD = new System.Windows.Forms.Label();
+            this.lblNgay = new System.Windows.Forms.Label();
             this.tctMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -45,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.SuspendLayout();
             // 
             // tctMain
@@ -81,6 +87,7 @@
             this.btnKhachHang.TabIndex = 1;
             this.btnKhachHang.Text = "Thêm";
             this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // dgvKhachHang
             // 
@@ -115,6 +122,7 @@
             this.btnSanPham.TabIndex = 3;
             this.btnSanPham.Text = "Thêm";
             this.btnSanPham.UseVisualStyleBackColor = true;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // dgvSanPham
             // 
@@ -130,6 +138,11 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.lblNgay);
+            this.tabPage3.Controls.Add(this.lblMaHD);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.dgvCTHD);
             this.tabPage3.Controls.Add(this.btnHoaDon);
             this.tabPage3.Controls.Add(this.dgvHoaDon);
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
@@ -142,12 +155,13 @@
             // btnHoaDon
             // 
             this.btnHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHoaDon.Location = new System.Drawing.Point(709, 376);
+            this.btnHoaDon.Location = new System.Drawing.Point(317, 379);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(75, 31);
             this.btnHoaDon.TabIndex = 3;
             this.btnHoaDon.Text = "Thêm";
             this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // dgvHoaDon
             // 
@@ -158,8 +172,56 @@
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(3, 5);
             this.dgvHoaDon.Name = "dgvHoaDon";
-            this.dgvHoaDon.Size = new System.Drawing.Size(786, 365);
+            this.dgvHoaDon.Size = new System.Drawing.Size(389, 365);
             this.dgvHoaDon.TabIndex = 2;
+            // 
+            // dgvCTHD
+            // 
+            this.dgvCTHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCTHD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTHD.Location = new System.Drawing.Point(398, 56);
+            this.dgvCTHD.Name = "dgvCTHD";
+            this.dgvCTHD.Size = new System.Drawing.Size(391, 354);
+            this.dgvCTHD.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(398, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Mã hóa đơn:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(398, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 24);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Ngày lặp:";
+            // 
+            // lblMaHD
+            // 
+            this.lblMaHD.AutoSize = true;
+            this.lblMaHD.Location = new System.Drawing.Point(521, 5);
+            this.lblMaHD.Name = "lblMaHD";
+            this.lblMaHD.Size = new System.Drawing.Size(60, 24);
+            this.lblMaHD.TabIndex = 7;
+            this.lblMaHD.Text = "label3";
+            // 
+            // lblNgay
+            // 
+            this.lblNgay.AutoSize = true;
+            this.lblNgay.Location = new System.Drawing.Point(521, 29);
+            this.lblNgay.Name = "lblNgay";
+            this.lblNgay.Size = new System.Drawing.Size(60, 24);
+            this.lblNgay.TabIndex = 8;
+            this.lblNgay.Text = "label4";
             // 
             // FMain
             // 
@@ -175,7 +237,9 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +256,10 @@
         private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.Button btnHoaDon;
         private System.Windows.Forms.DataGridView dgvHoaDon;
+        private System.Windows.Forms.Label lblNgay;
+        private System.Windows.Forms.Label lblMaHD;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvCTHD;
     }
 }
