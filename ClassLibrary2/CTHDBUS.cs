@@ -13,6 +13,10 @@ namespace BUS
         {
             return CTHDDAO.GetAllCTHD();
         }
+        public static List<ChiTietHoaDon> GetCTHD(String mahd)
+        {
+            return CTHDDAO.GetCTHD(mahd);
+        }
         public static int AddCTHD(ChiTietHoaDon cthd)
         {
             return CTHDDAO.AddCTHD(cthd);

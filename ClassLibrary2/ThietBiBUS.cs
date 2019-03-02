@@ -13,6 +13,10 @@ namespace BUS
         {
             return ThietBiDAO.GetAllThietBi();
         }
+        public static ThietBi GetThietBi(String id)
+        {
+            return ThietBiDAO.GetThietBi(id);
+        }
         public static String[] Loaitb()
         {
             return ThietBiDAO.LoaiTB();

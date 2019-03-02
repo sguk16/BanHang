@@ -17,7 +17,7 @@ namespace DAO
                 result.Add(new HoaDon(data[i]));
             return result;
         }
-        public static HoaDon GetThietBi(String id)
+        public static HoaDon GetHoaDon(String id)
         {
             return new HoaDon(ExecuteQuery.getOne(id, "HoaDon"));
         }

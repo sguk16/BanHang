@@ -13,6 +13,10 @@ namespace BUS
         {
             return HoaDonDAO.GetAllHoaDon();
         }
+        public static HoaDon GetHoaDon(String id)
+        {
+            return HoaDonDAO.GetHoaDon(id);
+        }
         public static int AddHoaDon(HoaDon hd)
         {
             return HoaDonDAO.AddHoaDon(hd);

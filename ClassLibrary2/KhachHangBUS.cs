@@ -13,6 +13,10 @@ namespace BUS
         {
             return KhachHangDAO.GetAllKhachHang();
         }
+        public static KhachHang GetKhachHang(String id)
+        {
+            return new KhachHang(ExecuteQuery.getOne(id, "KhachHang"));
+        }
         public static int AddKhachHang(KhachHang kh)
         {
             return KhachHangDAO.AddKhachHang(kh);
